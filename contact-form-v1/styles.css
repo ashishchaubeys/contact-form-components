@@ -1,1 +1,185 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+    font-size: 1rem;
+}
+body, button, input, textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+.form-background {
+    display: flex;
+    min-height: 100vh;
+}
+.container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+}
+.screen {
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 15px;
+}
+.screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+}
+.screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4d4d4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.screen-header-left {
+    margin-right: auto;
+}
+.screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: white;
+    margin-right: 3px;
+    border-radius: 8px;
+}
+.screen-header-button.close {
+    background: #ed1c6f;
+}
+.screen-header-button.maximize {
+    background: #e8e925;
+}
+.screen-header-button.minimize {
+    background: #74c54f;
+}
+.screen-header-right {
+    display: flex;
+}
+.screen-header-dots {
+    width: 3px;
+    height: 3px;
+    background: #999;
+    margin-left: 2px;
+    border-radius: 8px;
+}
+.screen-body {
+    display: flex;
+}
+.screen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+.screen-body .screen-body-item.left .h1-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #ea1d6f;
+    font-size: 2rem;
+}
+.h1-title:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #ea1d6f;
+}
+.contact-detail {
+    margin-top: auto; /*Default set from bottom*/
+    font-size: 0.75rem;
+    color: #888;
+}
+.contact-form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.contact-form-group.message {
+    margin-top: 40px;
+    width: 100%;
+}
+.contact-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+.contact-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    font-size: 1rem;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+}
+.contact-form-control::placeholder {
+    color: #666;
+}
+.contact-form-control:focus {
+    border-bottom-color: #ddd;
+}
+.contact-form-button {
+    background: none;
+    border: none;
+    color: #ea1d6f;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+.contact-form-button:hover {
+    color: #b9134f;
+}
 
+
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 520px){
+    .screen-body {
+        flex-direction: column;
+    }
+    .h1-title {
+        flex-direction: row;
+    }
+    .h1-title span {
+        margin-right: 12px;
+    }
+    .contact-detail {
+        margin: 60px 0;
+    }
+    .h1-title:hover {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .screen-body {
+        padding: 40px;
+    }
+    .screen-body-item {
+        padding: 0;
+    }
+    
+}
